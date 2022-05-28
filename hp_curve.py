@@ -195,7 +195,7 @@ def hyp_curve(file_name, dst_file_name, curve_name, ref_level, to_excel=True, sa
 
 # Data input
 
-working_directory = r'D:\Proyectos\Choquechambi\Mailanco\Geoproceso'
+working_directory = r''
 os.chdir(working_directory)
 file_name = os.path.join(working_directory, 'Countours_2_m.shp')
 dst_file_name = os.path.join(working_directory, 'box_clipping.shp')
