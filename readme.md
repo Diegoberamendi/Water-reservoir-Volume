@@ -13,8 +13,6 @@ which is also used to clip the contour-line shapefile. The total volume is calcu
 the accumulated value of volumes corresponding to a certain elevation difference. **Method 2** (Explained below) is used
 for this end. 
 
-![](img/marcus-woodbridge-EhcI5FPSZs8-unsplash.jpg widht=50)
-
 <img src="img/marcus-woodbridge-EhcI5FPSZs8-unsplash.jpg" width="500">
 
 **Fig.1** - A Dam in Elan Valley in Mid Wales. Source :  Marcus Woodbridge,2019.
@@ -39,11 +37,13 @@ The volume of a water-reservoir is obtained from the accumulated value
 of volumes that are calculated in successive layers with the formula of a circular cone [[1]](#1). 
 
 
-$$ V = 1/3*H*(A_{1}+A_{2} + raiz(A_{1}*A_{2}))$$
+$$ 
+V = \frac{1}{3}H(A_{1}+A_{2} + \sqrt{A_{1}*A_{2}})
+$$
 
 Where: 
 
-$V$ = Volume.
+$V$ : Volume.
 
 $A_{1}$ : area within the outer depth contour being considered.
 
@@ -61,11 +61,11 @@ $H$     : Difference of elevation between the considered contour lines.
 This formula is derived from the "End-Area formula" that is applied to
 calculate the volume of prismoidal forms [[1]](#1): 
 
-$$V = 1/2*H*(A_{1}+A_{2})$$
+$$V = \frac{1}{2}H(A_{1}+A_{2}) $$
 
 Where: 
 
-$V$ = Volume.
+$V$ : Volume.
 
 $A_{1}$ : area within the outer depth contour being considered.
 
