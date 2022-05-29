@@ -8,8 +8,8 @@ _Stuttgart-Germany 28.05.2022_
 <hr style="border:2px solid gray">
 
 ## 1. Introduction
-The function `hp_curv.py` computes the volume of a water-reservoir respect a dam axis  based on a contour-line shapefile and a boundary polygon
-which is also used to clip the contour-line shapefile. The total volume is calculated as 
+The function `hp_curv.py` computes the volume of a water-reservoir respect a dam axis  based on a contour-line Shapefile and a boundary polygon
+which is also used to clip the contour-line Shapefile. The total volume is calculated as 
 the accumulated value of volumes corresponding to a certain elevation difference. **Method 2** (Explained below) is used
 for this end. 
 
@@ -45,7 +45,7 @@ Where:
 
 $V$ : Volume.
 
-$A_{1}$ : area within the outer depth contour being considered.
+$A_{1}$ : Area within the outer depth contour being considered.
 
 $A_{2}$ : Area within the inner contour line under consideration.
 
@@ -56,7 +56,7 @@ $H$     : Difference of elevation between the considered contour lines.
 
 <img src="img/W_reservoir-Lam.2.png" width="500">
 
-**Fig.2** - Contour-lines of a Water-reservoir. Source: Beramendi,2022.
+**Fig.2** - Contour-lines of a water-reservoir. Source: Beramendi,2022.
 
 This formula is derived from the "End-Area formula" that is applied to
 calculate the volume of prismoidal forms [[1]](#1): 
@@ -67,7 +67,7 @@ Where:
 
 $V$ : Volume.
 
-$A_{1}$ : area within the outer depth contour being considered.
+$A_{1}$ : Area within the outer depth contour being considered.
 
 $A_{2}$ : Area within the inner contour line under consideration.
 
@@ -105,8 +105,8 @@ graph TD
 
 ## 3.2 Code development 
 
-The first section of the code clips the contour-lines shapefile not before declaring the variables 
-`geomerged` and `geotype` as **global** this makes possible their usage outside the if block 
+The first section of the code clips the contour-lines Shapefile and declares the variables 
+`geomerged` and `geotype` as **global** making possible their usage outside the if block 
 `if geometry_elements != 0:`.
 
 ```python
@@ -114,7 +114,7 @@ global geo_merged, geo_type
 os.system('ogr2ogr -clipsrc' + ' ' + dst_file_name + ' ' + curve_name + ' ' + file_name)
 ```
 
-In order to manipulate the content of the shapefile the appropriate *Driver* (*Shapefile*) is indicated and then the
+In order to manipulate the content of the Shapefile the appropriate *Driver* (*Shapefile*) is indicated and then the
 is opened with `diver.Open(<file_name>,<update>)` where `<update> = 0` for read only and `<update> = 1`
 for writing [[2]](#2).
 
@@ -123,8 +123,8 @@ driver = ogr.GetDriverByName('ESRI Shapefile')
 data_source = driver.Open(curve_name, 0)
 ```
 
-The layer of the shapefile is accessed with `layer = data_source.GetLayer(<index>)` where `<index>` is always
-0 for shapefiles. This value is more valuable for other data types such us GML or TIGER [[2]](#2). The number of elements
+The layer of the Shapefile is accessed with `layer = data_source.GetLayer(<index>)` where `<index>` is always
+0 for Shapefiles. This value is more valuable for other data types such us GML or TIGER [[2]](#2). The number of elements
 contained in the Shapefile is obtained with `layer.GetFeatureCount()`.
 
 
@@ -175,7 +175,7 @@ this value will not be considered for the volume calculation.
             geometry_elements = geometry.GetGeometryCount()
 
 ```
-The contour-lines shapefile is composed by two groups of lines: **closed lines** and **open lines**
+The contour-lines Shapefile is composed by two groups of lines: **closed lines** and **open lines**
 which have **Area = 0** as a consequence of the clipping procurement. They must
 be closed in order to get its area, for this purpose **Shapely** was used. Figure 
 shows both lines as a result of clipping. 
@@ -200,7 +200,7 @@ its geometry are exported into *Well Known Text format (WKT)* and loaded to enab
 
 if the contour-line is Multilinestring (composed of several lines) `geometry_elements!=0` is true, then it is merged with `linemerge(load_geom)` and their
 coordinates (of the merged open line) are retrieved with `list(merged_geometry.coords)` and used to create a Polygon 
-with `Polygon(coordinates_linestrings)` so to calculate the Area with `polygon.area`.
+with `Polygon(coordinates_linestrings)` so to calculate its area with `polygon.area`.
 
 if the contour-line is a Linestring then its coordinates are extracted to create a polygon and get its area: 
 `merged_geometry=load_geom`.
@@ -285,10 +285,10 @@ but the elevation is kept.
 
 Proceding with the calculation, 4 colums are created and alocated at the right side of the Dataframe, those are:
 
-1. `Diff_Elevation` - calculates the difference of elevation between contour-lines.
+1. `Diff_Elevation` - Calculates the difference of elevation between contour-lines.
 2. `Avr_Area` - Calculates the average area between two contour-line areas. The `.shift()` is used to sum one value of a column with the above one. 
 3. `Volume` - Calculates the Volume which is give by the multiplication of 1 and 2.
-4. `Ac_Volume` - Is the accumulated volume whose final value is the total Volume of the water-reservoir. 
+4. `Ac_Volume` - Is the accumulated volume whose final value is the total volume of the water-reservoir. 
 
 
 ```python
@@ -305,7 +305,7 @@ dt_proc['Ac_Volume'] = dt_proc['Volume'].cumsum()
 # 4. Example 
 
 Given a Digital Elevation Model (DEM) **./dem.tif** of a particular area, calculate the volume of water-reservoir
-respect the red dam axis, which goes from point A to Point B, at a maximum elevation of 3226 masl with contour lines 
+respect the red dam axis, which goes from point A to Point B, at a maximum elevation of 3226 masl with contour-lines 
 every 2 m. See Figure below.
 
 
@@ -371,7 +371,7 @@ In Table 1 *Diff_Elevation* stands for the **Elevation difference between contou
 the **average Area between contour-lines** and *Ac_Volume* stands for the **acumulation of volumes**. The last
 value of the acumulated volumes is the final volume of the water-reservoir at the indicated elevation. 
 
-Fig.6 shows the hypsometric curves of the water-reservoir.  
+Figure 6 shows the hypsometric curves of the water-reservoir.  
 
 <img src="img/hypso_curves.png">
 
