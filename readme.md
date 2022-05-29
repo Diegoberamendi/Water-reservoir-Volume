@@ -93,7 +93,7 @@ contour lines (e.g each 5 meters).
 graph TD
     A[<b>hp_curve.py</b>] --> B(Input of parameters)
     B-->C(Clipping of Contour-lines shapefile)
-    C-->D(Retrieving of information of each contour-line in lists:<br>ID,Geometry type, Elevation, Area)
+    C-->D(Retrieving information of each contour-line in lists:<br>ID,Geometry type, Elevation, Area)
     D-->E{If Area of contour-line = 0}
     E-->|Yes| F(Contour line is open. Close it an calculate area)
     E-->|No| G(Contour line is closed, calculate Area)
