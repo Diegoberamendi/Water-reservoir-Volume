@@ -309,7 +309,7 @@ respect the red dam axis, which goes from point A to Point B, at a maximum eleva
 every 2 m. See Figure below.
 
 
-<img src="img/dem1.png" >
+<img src="img/dem1.png" width="450" >
 
 **Fig.5** - Digital Elevation Model, Dam axis and Dam-axis. Source: Beramendi, 2022. 
 
@@ -318,7 +318,7 @@ is identified and red colored. Subsequently the Box_clipping polygon(**Box_clipp
 lines under consideration. It must be noted that this polygon must have 2 vertices at the dam axis, that is to 
 say at Point A and Point B. 
 
-<img src="img/contour_2m.png" >
+<img src="img/contour_2m.png" width="450">
 
 **Fig. 6** - Contour-lines every 2 meters, dam Axis and boundary polygon. Source: Beramendi, 2022.
 
