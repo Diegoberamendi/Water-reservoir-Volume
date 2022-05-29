@@ -371,11 +371,11 @@ In Table 1 *Diff_Elevation* stands for the **Elevation difference between contou
 the **average Area between contour-lines** and *Ac_Volume* stands for the **acumulation of volumes**. The last
 value of the acumulated volumes is the final volume of the water-reservoir at the indicated elevation. 
 
-Figure 6 shows the hypsometric curves of the water-reservoir.  
+Figure 7 shows the hypsometric curves of the water-reservoir.  
 
 <img src="img/hypso_curves.png">
 
-**Fig.6** - Hypsometric curves of the water-reservoir. Source: Beramendi, 2022.
+**Fig.7** - Hypsometric curves of the water-reservoir. Source: Beramendi, 2022.
 
 The total volume of the water-reservoir is displayed in the command window like below:
 
