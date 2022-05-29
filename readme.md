@@ -13,7 +13,7 @@ which is also used to clip the contour-line shapefile. The total volume is calcu
 the accumulated value of volumes corresponding to a certain elevation difference. **Method 2** (Explained below) is used
 for this end. 
 
-<img src="img/marcus-woodbridge-EhcI5FPSZs8-unsplash.jpg" width="500">
+<img src="img/marcus-woodbridge-EhcI5FPSZs8-unsplash.jpg" width="400">
 
 **Fig.1** - A Dam in Elan Valley in Mid Wales. Source :  Marcus Woodbridge,2019.
 
@@ -315,12 +315,12 @@ every 2 m. See Figure below.
 
 First, the contour-lines Shapefile every 2 m are generated in QGIS (**contourlines_2m.shp**) and the contour-line with an elevation of 3226 masl
 is identified and red colored. Subsequently the Box_clipping polygon(**Box_clipping.shp**) is delineated containing the contour
-lines under consideration. It must be noted that this polygon must have 2 vertices at the Dam axis, that is to 
+lines under consideration. It must be noted that this polygon must have 2 vertices at the dam axis, that is to 
 say at Point A and Point B. 
 
 <img src="img/contour_2m.png" >
 
-**Fig. 6** - Contour-lines every 2 meters, Dam Axis and boundary polygon. Source: Beramendi, 2022.
+**Fig. 6** - Contour-lines every 2 meters, dam Axis and boundary polygon. Source: Beramendi, 2022.
 
 The function is called in the following way: 
 
@@ -368,8 +368,8 @@ The function will generate the hypsometric curves and will export the dataframe 
 | 20    | **3226**  | **35175.56006** |        2         | 33667.50555 | 67335.01111 | **380116.3175** |
 
 In Table 1 *Diff_Elevation* stands for the **Elevation difference between contour lines**, *Avr_Area* stands for 
-the **Average Area between contour-lines** and *Ac_Volume* stands for the **acumulation of volumes**. The last
-value of the acumulated volumes is the final volume of the water-reservori at the indicated elevation. 
+the **average Area between contour-lines** and *Ac_Volume* stands for the **acumulation of volumes**. The last
+value of the acumulated volumes is the final volume of the water-reservoir at the indicated elevation. 
 
 Fig.6 shows the hypsometric curves of the water-reservoir.  
 
@@ -377,7 +377,7 @@ Fig.6 shows the hypsometric curves of the water-reservoir.
 
 **Fig.6** - Hypsometric curves of the water-reservoir. Source: Beramendi, 2022.
 
-The total volume of the water-reservoir is also displayed in the command window like below:
+The total volume of the water-reservoir is displayed in the command window like below:
 
 
 ```
