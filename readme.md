@@ -387,7 +387,7 @@ Water-mirror area = 35175.56
 
 ```
 >**_NOTE:_**  *" Warning 1: OGR_G_Area() called against non-surface geometry type"* will be displayed
-> in the command window. This warning refers to open lines with 0 value as area value since
+> in the command window. This warning refers to open lines with 0 value area since
 > they are open, so this warning do not signify any issue that compromises the operation of the function 
 
 The output in the command window will look like this:
